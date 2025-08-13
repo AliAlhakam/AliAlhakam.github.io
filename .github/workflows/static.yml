@@ -1,0 +1,127 @@
+import { Github, Linkedin, Mail, ExternalLink } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+      <div className="container mx-auto px-4 py-16 max-w-4xl">
+        {/* Header */}
+        <header className="text-center mb-16">
+          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-slate-100 mb-4">Ali Alhakam </h1>
+          <p className="text-xl text-slate-600 dark:text-slate-400">Economist | Data Analyst | Financial Analyst</p>
+        </header>
+
+        {/* Social Links */}
+        <Card className="mb-12 shadow-lg">
+          <CardContent className="p-8">
+            <h2 className="text-2xl font-semibold mb-6 text-center text-slate-900 dark:text-slate-100">
+              Connect With Me
+            </h2>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto bg-transparent" asChild>
+                <a href="https://www.linkedin.com/in/ali-alhakam" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="w-5 h-5 mr-2" />
+                  LinkedIn
+                </a>
+              </Button>
+              <Button variant="outline" size="lg" className="w-full sm:w-auto bg-transparent" asChild>
+                <a href="https://github.com/AliAlhakam/" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-5 h-5 mr-2" />
+                  GitHub
+                </a>
+              </Button>
+              <Button variant="outline" size="lg" className="w-full sm:w-auto bg-transparent" asChild>
+                <a href="mailto:ali.alhakam89@gmail.com">
+                  <Mail className="w-5 h-5 mr-2" />
+                  Email
+                </a>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Bio Section */}
+        <Card className="mb-12 shadow-lg">
+          <CardContent className="p-8">
+            <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-slate-100">About Me </h2>
+            <div className="prose prose-lg max-w-none text-slate-700 dark:text-slate-300">
+              <p className="leading-relaxed">
+                I am a goal-oriented <strong>Data Analyst</strong> with a background in Economics. Proficient in Excel,
+                SQL, Power BI, Python, and Tableau. Skilled in leveraging economic principles and analytical tools to
+                transform complex data into clear, actionable insights that support business growth. Committed to
+                continuous learning and the development of new techniques to stay ahead in the evolving data analytics
+                landscape.
+              </p>
+              <p className="leading-relaxed mt-4"></p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Skills Section */}
+        <Card className="mb-12 shadow-lg">
+          <CardContent className="p-8">
+            <h2 className="text-2xl font-semibold mb-6 text-slate-900 dark:text-slate-100">Skills & Expertise</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {["Data Analysis", "SQL", "Python", "Data Visualization", "Power BI", "Tableau"].map((skill) => (
+                <div
+                  key={skill}
+                  className="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-lg text-center text-slate-800 dark:text-slate-200"
+                >
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Projects Section */}
+        <Card className="mb-12 shadow-lg">
+          <CardContent className="p-8">
+            <h2 className="text-2xl font-semibold mb-6 text-slate-900 dark:text-slate-100">Featured Projects</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="border border-slate-200 dark:border-slate-700 rounded-lg p-6">
+                <h3 className="text-xl font-semibold mb-3 text-slate-900 dark:text-slate-100">
+                  AirBnB Project — Excel Descriptive Analysis
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 mb-4">
+                  Performed descriptive data analysis on Airbnb listings to identify patterns and trends relevant to an
+                  imaginary client. This included analyzing property types, pricing, occupancy rates, and location-based
+                  performance.
+                </p>
+                <Button variant="outline" size="sm" asChild>
+                  <a href="https://github.com/AliAlhakam/Airbnb_AlbanyNY" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Project
+                  </a>
+                </Button>
+              </div>
+              <div className="border border-slate-200 dark:border-slate-700 rounded-lg p-6">
+                <h3 className="text-xl font-semibold mb-3 text-slate-900 dark:text-slate-100">
+                  Bahrain Import Analysis — Power BI Data Visualization
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 mb-4">
+                  Cleaned, transformed, and analyzed Bahrain import data covering the years 2020 - 2024 to identify
+                  local demand patterns and import trends. Created interactive dashboards to make the findings
+                  accessible to stakeholders.
+                </p>
+                <Button variant="outline" size="sm" asChild>
+                  <a href="https://github.com/AliAlhakam/Bahrain_Imports" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Project
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Footer */}
+        <footer className="text-center text-slate-500 dark:text-slate-400">
+          <p className="mb-2">© 2025 Ali Alhakam. </p>
+          <p className="text-sm">{""}</p>
+        </footer>
+      </div>
+    </div>
+  )
+}
